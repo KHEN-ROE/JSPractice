@@ -1,0 +1,11 @@
+.yellow-bg {
+    background-color: yellow;
+}
+
+.alert-box {
+    background-color: rgb(113, 113, 167);
+    color: blue;
+    padding: 20px 20px;
+    border-radius: 5px;
+    display: none;
+}
