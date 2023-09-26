@@ -20,11 +20,27 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
+
+    <script>
+        // badge 홀수 번 클릭 시 내부 글자를 light로 변경
+        // badge 짝수 번 클릭 시 내부 글자를 dark로 변경
+        var count = 0;
+        $('.badge').click(function(){
+            count++;
+            if(count % 2 != 0) {
+                $('.badge').html('Light 🔄');
+            } else {
+                $('.badge').html('Dark 🔄');
+            }
+        })
+
+    </script>
 
     <ul class="list-group">
         <li class="list-group-item">An item</li>
@@ -64,13 +80,17 @@
     </div>
 
     <script>
-        $('form').on('submit', function(e){
-            if(document.getElementsByClassName('form-control')[0].value == '') {
+        $('form').on('submit', function (e) {
+            if (document.getElementById('memberId').value == '') {
                 e.preventDefault();
-                alert('아이디 혹은 비밀번호가 입력되지 않았습니다.');
-            } else if(document.getElementById('password').value.length < 6) {
+                alert('아이디가 입력되지 않았습니다.');
+            } else if (document.getElementById('password').value == '') {
                 e.preventDefault();
-                alert('비밀번호를 6자 이상 입력하세요.')
+                alert('비번 입력 하쇼.');
+            }
+            else if (document.getElementById('password').value.length < 6) {
+                e.preventDefault();
+                alert('비밀번호를 6자 이상 입력하세요.');
             }
         });
     </script>

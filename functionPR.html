@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <form>
+            <input type="text" id="inputNum1">
+            <input type="text" id="inputNum2">
+            <button type="submit">전송</button>
+        </form>
+    </div>
+
+    <script>
+
+        $('form').on('submit', function (e) {
+            e.preventDefault();
+
+            let number1 = parseInt($('#inputNum1').val(), 10);
+            let number2 = parseInt($('#inputNum2').val(), 10);
+            game(number1, number2);
+        })
+
+        function game(number1, number2) {
+            if(number1 < 40 || number2 < 40) {
+                console.log("불합격");
+            } else if(number1 + number2 >= 120) {
+                console.log("합격");
+            } else {
+                console.log("불합격");
+            }
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
