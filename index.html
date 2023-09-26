@@ -45,14 +45,55 @@
 
     <!-- <h4 id="test">안녕하세여</h4> -->
 
+    <button id="login">로그인</button>
+
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요.</h4>
+            <form action="success.html">
+                <div class="my-3">
+                    <input id="memberId" type="text" class="form-control">
+                </div>
+                <div class="my-3">
+                    <input id="password" type="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $('form').on('submit', function(e){
+            if(document.getElementsByClassName('form-control')[0].value == '') {
+                e.preventDefault();
+                alert('아이디 혹은 비밀번호가 입력되지 않았습니다.');
+            } else if(document.getElementById('password').value.length < 6) {
+                e.preventDefault();
+                alert('비밀번호를 6자 이상 입력하세요.')
+            }
+        });
+    </script>
+
+    <script>
+        $('#login').click(function () {
+            $('.black-bg').fadeIn();
+        });
+
+        $('.btn').click(function () {
+            $('.black-bg').fadeOut();
+        });
+
+    </script>
+
+
     <script>
 
         // document.querySelector('#test') // 아래의 Jquery 문법과 같다.
+        // addEventListner는 .on
         $('#test').html('안녕');
         $('#test').css('color', 'red');
         $('#test').css('background-color', 'black');
-
-
 
     </script>
 
