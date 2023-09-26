@@ -1,3 +1,11 @@
+.list-group {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 .yellow-bg {
     background-color: yellow;
 }
