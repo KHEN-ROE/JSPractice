@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <form>
+            <p>이성계가 태어난 년도</p>
+            <input type="text" id="answer"/>
+            <button type="submit" id="send-answer">전송</button>
+        </form>
+    </div>
+
+    <script>
+       $('form').submit(function (e){
+        e.preventDefault();
+        const num = parseInt($('#answer').val(), 10)
+        game(num);
+       })
+
+       let count = 0;
+
+       function game(num) {
+
+        if(num == 1335) {
+            alert("정답");
+        } else {
+            alert("오답");
+            count ++;
+        }
+
+        console.log(count);
+        if (count >= 3) {
+            alert("idiot");
+            count = 0;
+        }
+       }
+
+    </script>
+
+</body>
+</html>

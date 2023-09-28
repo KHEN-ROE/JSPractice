@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
+            <span class="navbar-brand">JSSHOP</span>
             <span class="badge bg-dark">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
@@ -28,12 +28,18 @@
     </nav>
 
     <script>
+        window.addEventListener('scroll', function () {
+            // console.log(window.scrollY);
+        });
+    </script>
+
+    <script>
         // badge 홀수 번 클릭 시 내부 글자를 light로 변경
         // badge 짝수 번 클릭 시 내부 글자를 dark로 변경
         var count = 0;
-        $('.badge').click(function(){
+        $('.badge').click(function () {
             count++;
-            if(count % 2 != 0) {
+            if (count % 2 != 0) {
                 $('.badge').html('Light 🔄');
             } else {
                 $('.badge').html('Dark 🔄');
@@ -62,6 +68,85 @@
     <!-- <h4 id="test">안녕하세여</h4> -->
 
     <button id="login">로그인</button>
+
+    <div style="height: 1000px;"></div>
+
+    <div class="alert alert-danger">
+        <span id="sec">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit
+        debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+        praesentium exercitationem.
+    </div>
+
+    <script>
+        $(window).on('scroll', function(){
+          if (window.scrollY > 100) {
+            $('.navbar-brand').css('font-size', '20px');
+          }
+        });
+      </script>
+
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next">다음</button>
+
+    <script>
+
+        var 지금사진 = 1;
+
+        $('.next').click(function () {
+            $('.slide-container').css('transform', 'translateX(-' + 지금사진 + '00vw)');
+            지금사진++;
+        })
+
+        $('.slide-1').click(function () {
+            $('.slide-container').css('transform', 'translateX(0vw)');
+        })
+
+
+        $('.slide-2').click(function () {
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+        })
+
+        $('.slide-3').click(function () {
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+
+        })
+    </script>
+
+
+    <script>
+
+        let count2 = 5;
+
+        setInterval(function () {
+            if (count2 > 0) {
+                count2--;
+                $('#sec').html(count2);
+            } else {
+                $('.alert').hide();
+            }
+        }, 1000)
+
+    </script>
 
     <div class="black-bg">
         <div class="white-bg">
