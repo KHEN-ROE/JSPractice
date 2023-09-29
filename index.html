@@ -69,7 +69,6 @@
 
     <button id="login">로그인</button>
 
-    <div style="height: 1000px;"></div>
 
     <div class="alert alert-danger">
         <span id="sec">5</span>초 이내 구매시 사은품 증정!
@@ -163,6 +162,22 @@
             </form>
         </div>
     </div>
+
+    <script>
+        $('#login').click(function(){
+            $('.black-bg').fadeIn();
+        })
+    </script>
+
+
+    <script>
+        $('.black-bg').click(function(){
+            if($(e.target) == $('.black-bg')) {
+                $('.black-bg').removeClass('show');
+            }
+        });
+
+    </script>
 
     <script>
         $('form').on('submit', function (e) {
